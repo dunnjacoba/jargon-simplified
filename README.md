@@ -1,7 +1,11 @@
-## jargon-simplified
+## Jargon-simplified
 
-Simplifying jargon and ancronyms used widely in contributions. While navigating through the world of Open Source, many words or ancronyms, are used
-that are not defined. This is meant to provide a centralized location for the definitions of those words or ancronyms so that they can be demistified.
+Simplifying jargon and acronyms used widely in contributions. While navigating through the world of Open Source, many words or acronyms, are used
+that are not defined. This is meant to provide a centralized location for the definitions of those words or acronyms so that they can be demystified.
+
+**Jargon**: Special words or expressions that are used by a particular profession or group and are difficult for others to understand.
+
+**Acronym**: An abbreviation formed from the initial letters of other words and pronounced as a word.
 
 # Definitions:
 
