@@ -13,7 +13,7 @@ In the repository on Github
 
 **If you know the definition of the word or acronym:**
 
-Open the <code>README.md</code> file and beneath the <code> #Definitions </code> tag
+Open the <code>README.md</code> file and beneath the <code> #Definition</code> tab
 add the word you want to define.
 
 Example:
