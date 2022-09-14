@@ -9,6 +9,8 @@ that are not defined. This is meant to provide a centralized location for the de
 
 ## Definitions:
 
+- **CRM**: "Customer relationship management" 'is a technology for managing all your company’s relationships and interactions with customers and potential customers. The goal is simple: Improve business relationships to grow your business. A CRM system helps companies stay connected to customers, streamline processes, and improve profitability. -Salesforce.com'
+
 - **LGTM**: "Looks good to me" is commonly used when reviewing a pull request (**PR**) to siginfy that the changes proposed are okay and that the author of the comment approves.
 
 - **PR**: "pull request" is an **Issue** that is raised with proposed changes. These can be anything from corrections to typos to additional features the application did not have before.
