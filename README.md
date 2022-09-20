@@ -9,9 +9,20 @@ that are not defined. This is meant to provide a centralized location for the de
 
 ## Definitions:
 
+- **CD**: "Continuous Delivery" is a software engineering approach in which teams produce software in short cycles, ensuring that the software can be reliably released at any time and, when releasing the software. doing so manually.
+
+- **CI**: "Continuous Integration" is a **DevOps** software development practice where developers regularly
+  merge their code changes into a central repository, after which automated builds and tests are run.
+
+- **CRM**: "Customer relationship management" 'is a technology for managing all your company’s relationships and interactions with customers and potential customers. The goal is simple: Improve business relationships to grow your business. A CRM system helps companies stay connected to customers, streamline processes, and improve profitability. -Salesforce.com'
+
 - **LGTM**: "Looks good to me" is commonly used when reviewing a pull request (**PR**) to siginfy that the changes proposed are okay and that the author of the comment approves.
 
 - **PR**: "pull request" is an **Issue** that is raised with proposed changes. These can be anything from corrections to typos to additional features the application did not have before.
+
+- **UI**: "User Interface" is anything a user interacts with on a website, application, or any digital device.
+
+- **UX**: "User Experience" is the entire interaction that the user has with the product, including their feelings regarding the interaction.
 
 ## Contributions:
 
