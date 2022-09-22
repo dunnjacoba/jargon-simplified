@@ -20,6 +20,8 @@ that are not defined. This is meant to provide a centralized location for the de
 
 - **PR**: "pull request" is an **Issue** that is raised with proposed changes. These can be anything from corrections to typos to additional features the application did not have before.
 
+- **SDK**: "Software Development Kit" is a collection of software development tolls in one installable package. They facilitate the creation of applications by having a compiler, debugger and sometimes software framework.
+
 - **UI**: "User Interface" is anything a user interacts with on a website, application, or any digital device.
 
 - **UX**: "User Experience" is the entire interaction that the user has with the product, including their feelings regarding the interaction.
