@@ -7,6 +7,30 @@ that are not defined. This is meant to provide a centralized location for the de
 
 **Acronym**: An abbreviation formed from the initial letters of other words and pronounced as a word.
 
+## Getting started on localhost
+
+- Fork the repository
+- clone the repository to local machine
+
+To start the application on "http://localhost:3000"
+Run:
+
+```javascript
+
+- $npm ci
+- $npm run dev
+
+```
+
+To start the server on "http://localhost:5001"
+Run:
+
+```javascript
+
+- $node server.js
+
+```
+
 ## Definitions:
 
 - **CD**: "Continuous Delivery" is a software engineering approach in which teams produce software in short cycles, ensuring that the software can be reliably released at any time and, when releasing the software. doing so manually.
