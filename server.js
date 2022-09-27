@@ -1,23 +1,16 @@
+const bodyParser = require("body-parser");
 const express = require("express");
+const sequelize = require("./database");
+const jargonRouter = require("./routes/JargonRouter");
+
 const app = express();
+
 const port = 5001;
 
-app.get("/", (req, res) => {
-  res.status(200);
-  res.send("Hello World!");
-});
+app.use(bodyParser.json());
+app.use("/jargon", jargonRouter);
 
-app.post("/", (req, res) => {
-  res.send("Got a POST request");
-});
-
-app.put("/user", (req, res) => {
-  res.send("Got a PUT request at /user");
-});
-
-app.delete("/user", (req, res) => {
-  res.send("Got a DELETE request at /user");
-});
+sequelize.sync().then(() => console.log("db is ready"));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
