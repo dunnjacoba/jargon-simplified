@@ -2,7 +2,7 @@ export default function HelloWorld() {
   return (
     <>
       <div className="container">
-        <button type="button" style={{ padding: 2, margin: 4 }}>
+        <button name="Click Me" type="button" style={{ padding: 2, margin: 4 }}>
           Click Here
         </button>
         <button type="button" style={{ padding: 2, margin: 4 }}>
