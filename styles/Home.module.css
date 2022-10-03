@@ -21,6 +21,7 @@
   align-items: center;
 }
 
+
 .footer a {
   display: flex;
   justify-content: center;
@@ -104,7 +105,7 @@
 }
 
 .logo {
-  height: 1em;
+  height: 2.4rem;
   margin-left: 0.5rem;
 }
 

@@ -1,15 +1,23 @@
 import Head from "next/head";
 import Image from "next/image";
-import useSWR from "swr";
 import styles from "../styles/Home.module.css";
-
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import jargonServices from "../services/JargonServices";
+import { useState } from "react";
 
 export default function Home() {
-  const { data, error } = useSWR("/api/hello", fetcher);
+  const [data, setData] = useState([{ jargon: "ex", definition: "example" }]);
 
-  if (error) return <p>No data available</p>;
   if (!data) return <p>Loading....</p>;
+
+  const onClick = () => {
+    jargonServices.getAllJargon().then(getAllSuccess).catch(getAllErr);
+  };
+
+  const getAllSuccess = (res) => {
+    setData(res.data.jargon);
+  };
+
+  const getAllErr = (err) => console.error(err);
 
   return (
     <div className={styles.container}>
@@ -20,46 +28,28 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <a href="http://localhost:3000//helloworld">{data.name}</a>
+        <h1 className={styles.title}>Jargon Simplified</h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+          Where you can find meanings for tech jargon and acronyms like{" "}
+          <code className={styles.code}>{"'LGTM'"}</code>
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
           <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
+            href="https://www.merriam-webster.com/dictionary/jargon"
+            rel="noreferrer"
+            target="_blank"
             className={styles.card}
           >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+            <h2>{data[0].jargon} &rarr;</h2>
+            <p>{data[0]?.definition}</p>
           </a>
         </div>
+
+        <button className={styles.button} type="button" onClick={onClick}>
+          Click Me
+        </button>
       </main>
 
       <footer className={styles.footer}>
@@ -70,7 +60,12 @@ export default function Home() {
         >
           Powered by{" "}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <Image
+              src="/1.png"
+              alt="Jacob Dunn JD Logo"
+              width={40}
+              height={40}
+            />
           </span>
         </a>
       </footer>
