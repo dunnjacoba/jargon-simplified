@@ -12,6 +12,17 @@ const getAllJargon = () => {
   return axios(config);
 };
 
-const jargonServices = { getAllJargon };
+const createNewJargon = (data) => {
+  const config = {
+    method: "POST",
+    url: `${endpoint}/jargon`,
+    data: data,
+    headers: { "Content-type": "application/json" },
+    crossdomain: true,
+  };
+  return axios(config);
+};
+
+const jargonServices = { getAllJargon, createNewJargon };
 
 export default jargonServices;
