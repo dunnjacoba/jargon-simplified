@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import jargonServices from "../services/JargonServices";
 import { useState } from "react";
+import JargonCards from "../component/jargoncard";
 
 export default function Home() {
   const [data, setData] = useState([{ jargon: "ex", definition: "example" }]);
@@ -18,6 +19,10 @@ export default function Home() {
   };
 
   const getAllErr = (err) => console.error(err);
+
+  const mapData = (jargon) => {
+    return <JargonCards key={jargon.id} data={jargon} />;
+  };
 
   return (
     <div className={styles.container}>
@@ -35,17 +40,7 @@ export default function Home() {
           <code className={styles.code}>{"'LGTM'"}</code>
         </p>
 
-        <div className={styles.grid}>
-          <a
-            href="https://www.merriam-webster.com/dictionary/jargon"
-            rel="noreferrer"
-            target="_blank"
-            className={styles.card}
-          >
-            <h2>{data[0].jargon} &rarr;</h2>
-            <p>{data[0]?.definition}</p>
-          </a>
-        </div>
+        {data.map(mapData)}
 
         <button className={styles.button} type="button" onClick={onClick}>
           Click Me
