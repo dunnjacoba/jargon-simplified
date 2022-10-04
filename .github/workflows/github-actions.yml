@@ -1,5 +1,5 @@
 name: Jargon Workflow
-run-name: ${{ githun.actor }} has made a change to JargonSimplified
+run-name: ${{ github.actor }} has made a change to JargonSimplified
 on: [push] 
 jobs:
   Jargon-GitHub-Actions:
