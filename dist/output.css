@@ -226,6 +226,7 @@ textarea {
   padding: 0;
   /* 3 */
   
+  
 }
 
 /*
@@ -252,7 +253,6 @@ button,
   /* 2 */
   background-image: none;
   /* 2 */
-  border: #9ca3af;
 }
 
 /*
@@ -270,6 +270,7 @@ Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/
 :-moz-ui-invalid {
   box-shadow: none;
 }
+
 
 /*
 Add the correct vertical alignment in Chrome and Firefox.

@@ -23,6 +23,16 @@ const createNewJargon = (data) => {
   return axios(config);
 };
 
-const jargonServices = { getAllJargon, createNewJargon };
+const getByJargon = (query) => {
+  const config = {
+    method: "GET",
+    url: `${endpoint}/jargon/${query}`,
+    headers: { "Content-type": "application/json" },
+    crossdomain: true,
+  };
+  return axios(config);
+};
+
+const jargonServices = { getAllJargon, createNewJargon, getByJargon };
 
 export default jargonServices;
