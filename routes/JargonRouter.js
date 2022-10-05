@@ -26,23 +26,30 @@ jargonRouter
     }
   });
 
-jargonRouter.route("/:id").put(async (req, res) => {
-  const { jargon, definition } = req.body;
-  const { id } = req.params;
-  let newEntry = {};
+jargonRouter
+  .route("/:id")
+  .put(async (req, res) => {
+    const { jargon, definition } = req.body;
+    const { id } = req.params;
+    let newEntry = {};
 
-  const { dataValues: prevJargon } = await Jargon.findOne({ where: { id } });
-  if (jargon) newEntry.jargon = jargon;
-  if (definition) newEntry.definition = definition;
+    const { dataValues: prevJargon } = await Jargon.findOne({ where: { id } });
+    if (jargon) newEntry.jargon = jargon;
+    if (definition) newEntry.definition = definition;
 
-  await Jargon.update({ ...newEntry }, { where: { id } });
+    await Jargon.update({ ...newEntry }, { where: { id } });
 
-  try {
-    res.status(200);
-    res.send(`Successfully updated ${id}`);
-  } catch (err) {
-    res.send(err.message);
-  }
-});
+    try {
+      res.status(200);
+      res.send(`Successfully updated ${id}`);
+    } catch (err) {
+      res.send(err.message);
+    }
+  })
+  .delete(async (req) => {
+    const id = req.params;
+
+    await Jargon.delete({ where: { id } });
+  });
 
 module.exports = jargonRouter;
