@@ -56,4 +56,4 @@ Run:
 
 ## License:
 
-**MIT** License
+**MIT** [License](https://github.com/dunnjacoba/jargon-simplified/blob/main/LICENSE)
