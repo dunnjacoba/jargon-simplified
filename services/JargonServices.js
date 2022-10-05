@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const endpoint = URL_HELPER;
+const endpoint = process.env.NEXT_PUBLIC_URL_HELPER;
 
 const getAllJargon = () => {
   const config = {
