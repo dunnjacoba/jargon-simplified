@@ -1,5 +1,6 @@
 const express = require("express");
 const jargonRouter = express.Router();
+const { Op } = require("sequelize");
 const Jargon = require("../Models/Jargon");
 
 jargonRouter
@@ -46,10 +47,30 @@ jargonRouter
       res.send(err.message);
     }
   })
-  .delete(async (req) => {
+  .delete(async (req, res) => {
     const id = req.params;
 
-    await Jargon.delete({ where: { id } });
+    await Jargon.destroy({ where: id });
+    try {
+      res.status(200);
+      res.send(`Successfully deleted ${id}`);
+    } catch (err) {
+      res.send(err.message);
+    }
   });
+
+jargonRouter.route("/:query").get(async (req, res) => {
+  const { query } = req.params;
+
+  try {
+    const jargon = await Jargon.findAll({
+      where: { jargon: { [Op.like]: `%${query}%` } },
+    });
+    res.status(200);
+    res.send({ jargon });
+  } catch (err) {
+    res.send(err.message);
+  }
+});
 
 module.exports = jargonRouter;
