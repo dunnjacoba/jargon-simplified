@@ -4,12 +4,23 @@ import styles from "../styles/Home.module.css";
 import jargonServices from "../services/JargonServices";
 import { useState } from "react";
 import JargonCards from "../component/jargoncard";
+import SearchBar from "../component/searchbar";
 
 export default function Home() {
-  const [data, setData] = useState([{ jargon: "ex", definition: "example" }]);
+  const [data, setData] = useState([
+    { id: 0, jargon: "ex", definition: "example" },
+  ]);
+  const [searchResult, setSearchResult] = useState([
+    {
+      id: 0,
+      jargon: "ex",
+      definition: "example",
+    },
+  ]);
 
   if (!data) return <p>Loading....</p>;
 
+  false && setSearchResult;
   const onClick = () => {
     jargonServices.getAllJargon().then(getAllSuccess).catch(getAllErr);
   };
@@ -22,6 +33,27 @@ export default function Home() {
 
   const mapData = (jargon) => {
     return <JargonCards key={jargon.id} data={jargon} />;
+  };
+
+  const displayInfo = () => {
+    if (data[0].id == 0) {
+      return searchResult.map(mapData);
+    } else {
+      return data.map(mapData);
+    }
+  };
+
+  const SearchClicked = () => {
+    let searchQuery = document.getElementsByName("search-input")[0].value;
+    jargonServices.getByJargon(searchQuery).then(getByJargonSucc).catch();
+  };
+
+  const getByJargonSucc = (res) => {
+    setSearchResult(res.data.jargon);
+  };
+
+  const getByJargonErr = (err) => {
+    console.error(err);
   };
 
   return (
@@ -39,11 +71,11 @@ export default function Home() {
           Where you can find meanings for tech jargon and acronyms like{" "}
           <code className={styles.code}>{"'LGTM'"}</code>
         </p>
-
-        {data.map(mapData)}
+        <SearchBar onClick={SearchClicked} />
+        {displayInfo()}
 
         <button className={styles.button} type="button" onClick={onClick}>
-          Click Me
+          View All
         </button>
       </main>
 

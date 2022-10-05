@@ -52,7 +52,7 @@ Run:
 
 ## Contributions:
 
-**See CONTRIBUTIONS.md**
+**See** [Contributing](https://github.com/dunnjacoba/jargon-simplified/blob/main/CONTRIBUTING.md)
 
 ## License:
 
