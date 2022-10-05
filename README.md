@@ -53,3 +53,7 @@ Run:
 ## Contributions:
 
 **See CONTRIBUTIONS.md**
+
+## License:
+
+**MIT** License
