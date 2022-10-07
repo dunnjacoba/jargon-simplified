@@ -15,7 +15,7 @@ const getAllJargon = () => {
 const createNewJargon = (data) => {
   const config = {
     method: "POST",
-    url: `${endpoint}/jargon`,
+    url: `${endpoint}jargon`,
     data: data,
     headers: { "Content-type": "application/json" },
     crossdomain: true,
@@ -26,7 +26,7 @@ const createNewJargon = (data) => {
 const getByJargon = (query) => {
   const config = {
     method: "GET",
-    url: `${endpoint}/jargon/${query}`,
+    url: `${endpoint}jargon/${query}`,
     headers: { "Content-type": "application/json" },
     crossdomain: true,
   };
