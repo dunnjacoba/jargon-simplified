@@ -45,7 +45,10 @@ export default function Home() {
 
   const SearchClicked = () => {
     let searchQuery = document.getElementsByName("search-input")[0].value;
-    jargonServices.getByJargon(searchQuery).then(getByJargonSucc).catch();
+    jargonServices
+      .getByJargon(searchQuery)
+      .then(getByJargonSucc)
+      .catch(getByJargonErr);
   };
 
   const getByJargonSucc = (res) => {
