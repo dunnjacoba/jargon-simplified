@@ -6,7 +6,7 @@ const jargonRouter = require("./routes/JargonRouter");
 
 const app = express();
 
-const port = 50001;
+const port = process.env.PORT || 50001;
 
 app.use(cors());
 app.use(bodyParser.json());
