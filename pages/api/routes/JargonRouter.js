@@ -1,11 +1,7 @@
 const express = require("express");
 const jargonRouter = express.Router();
 const { Op } = require("sequelize");
-<<<<<<<< HEAD:pages/api/routes/JargonRouter.js
 const Jargon = require("../../../Models/Jargon");
-========
-const Jargon = require("../../Models/Jargon");
->>>>>>>> main:api/routes/JargonRouter.js
 
 jargonRouter
   .route("/")
