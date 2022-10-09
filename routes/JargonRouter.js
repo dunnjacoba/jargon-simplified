@@ -53,7 +53,7 @@ jargonRouter
     await Jargon.destroy({ where: id });
     try {
       res.status(200);
-      res.send(`Successfully deleted ${id}`);
+      res.send(`Successfully deleted ${req.params.id}`);
     } catch (err) {
       res.send(err.message);
     }
