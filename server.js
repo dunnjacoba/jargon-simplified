@@ -2,7 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const cors = require("cors");
 const sequelize = require("./database");
-const jargonRouter = require("./routes/JargonRouter");
+const jargonRouter = require("./api/routes/JargonRouter");
 
 const app = express();
 
